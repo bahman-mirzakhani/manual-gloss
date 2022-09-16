@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+
+\usepackage{xepersian}
+\settextfont{Amiri}
+
+% bad define
+%\newcommand{\persiangloss}[2]{\noindent #1 \dotfill\ #2\\}
+
+% good define
+\makeatletter
+\newcommand{\persiangloss}[2]{\noindent
+	\@ifnextchar\persiangloss{#1 \dotfill\ \lr{#2}\\}{#1 \dotfill\ \lr{#2}}%
+}
+\newcommand{\englishgloss}[2]{\noindent
+	\@ifnextchar\englishgloss{#2 \dotfill\ \lr{#1}\\}{#2 \dotfill\ \lr{#1}}%
+}
+\makeatother
+
+\linespread{2.5}
+
+\begin{document}
+	
+	\section{فارسی به انگلیسی}
+	\persiangloss{تابع}{f}
+	\persiangloss{تابع}{f}
+	\persiangloss{تابع}{f}
+	\persiangloss{تابع}{f}
+	\persiangloss{تابع}{f}
+	\persiangloss{تابع}{f}
+	\persiangloss{تابع}{f}
+	\persiangloss{تابع}{f}
+	\persiangloss{تابع}{f}
+	\persiangloss{تابع}{f}
+	\persiangloss{تابع}{f}
+	\persiangloss{تابع}{f}
+	\persiangloss{تابع}{f}
+	\persiangloss{تابع}{f}
+	
+	\section{انگلیسی به فارسی}
+	\englishgloss{f}{تابع}
+	\englishgloss{f}{تابع}
+	\englishgloss{f}{تابع}
+	\englishgloss{f}{تابع}
+	\englishgloss{f}{تابع}
+	\englishgloss{f}{تابع}
+	\englishgloss{f}{تابع}
+	\englishgloss{f}{تابع}
+	\englishgloss{f}{تابع}
+	\englishgloss{f}{تابع}
+	\englishgloss{f}{تابع}
+	\englishgloss{f}{تابع}
+	\englishgloss{f}{تابع}
+	\englishgloss{f}{تابع}
+	
+\end{document}
